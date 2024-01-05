@@ -18,17 +18,25 @@ function getRandomNumber() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    const copyContainer = document.getElementById('copyContainer');
+
+    // Initial setup of event listener
     const copyButton = document.getElementById('copyButton');
-    copyButton.addEventListener('click', function () {
+    copyButton.addEventListener('click', handleCopyClick);
+
+    function handleCopyClick() {
         const hexCode = color.textContent;
         copyToClipboard(hexCode);
         copyContainer.innerHTML = '<span class="checkmark"><i class="fas fa-check"></i></span>';
 
+        // Show the "Copy" button again after 2 seconds
         setTimeout(function () {
-            copyContainer.innerHTML = '';
+            copyContainer.innerHTML = '<button id="copyButton" class="btn-copy"><i class="fas fa-clipboard"></i>Copy</button>';
+            // Reattach event listener to the new button
+            const newCopyButton = document.getElementById('copyButton');
+            newCopyButton.addEventListener('click', handleCopyClick);
         }, 2000);
-
-    });
+    }
 
     function copyToClipboard(text) {
         const textarea = document.createElement('textarea');
