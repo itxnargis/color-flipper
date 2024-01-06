@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Reattach event listener to the new button
             const newCopyButton = document.getElementById('copyButton');
             newCopyButton.addEventListener('click', handleCopyClick);
-        }, 2000);
+        }, 1000);
     }
 
     function copyToClipboard(text) {
