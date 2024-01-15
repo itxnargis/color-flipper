@@ -126,7 +126,6 @@ p {
   }
 }
 
-
 /* color-flipper */
 nav {
   background: var(--clr-white);
@@ -216,4 +215,10 @@ main {
 
 .checkmark {
   font-size: 0.8rem;
+}
+@media screen and (max-width: 767px) {
+  .container h2 {
+    display: flex;
+    flex-direction: column;
+  }
 }

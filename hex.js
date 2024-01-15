@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function handleCopyClick() {
         const hexCode = color.textContent;
         copyToClipboard(hexCode);
-        copyContainer.innerHTML = '<span class="checkmark"><i class="fas fa-check"></i></span>';
+        copyContainer.innerHTML = '<span class="checkmark"><i class="fas fa-check"></i>copied</span>';
 
         // Show the "Copy" button again after 2 seconds
         setTimeout(function () {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Reattach event listener to the new button
             const newCopyButton = document.getElementById('copyButton');
             newCopyButton.addEventListener('click', handleCopyClick);
-        }, 1000);
+        }, 500);
     }
 
     function copyToClipboard(text) {
